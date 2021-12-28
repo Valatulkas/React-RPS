@@ -4,7 +4,7 @@ import './index.css';
 const RPS = () => {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState('Who shall win?');
 
   const choices = ['rock', 'paper', 'scissors'];
 
@@ -42,13 +42,20 @@ const RPS = () => {
   }, [computerChoice, userChoice]); 
 
   return (
-    <div>
-        <h1>User choice is: {userChoice}</h1>
-        <h1>Computer choice is: {computerChoice}</h1>
-        {choices.map((choice, index) => 
-          <button key={index} onClick={() => handleClick(choice)}>{choice}</button>
-        )}
-        <h2>{result}</h2>
+    <div className='container'>
+        <div className='row'>
+          <div className='col-9 mx-auto my-5'>
+            <h1 className='my-3'>Rock Paper Scissors</h1>
+            <h3>You throw: {userChoice}</h3>
+            <h3 className='my-4'>Computer throws: {computerChoice}</h3>
+            {choices.map((choice, index) => 
+              <button className='mx-3' key={index} onClick={() => handleClick(choice)}>{choice}</button>
+            )}
+            <div className='border rounded border-primary my-5'>
+              <h2>{result}</h2>
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
