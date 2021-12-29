@@ -35,7 +35,7 @@ const RPS = () => {
         case 'rockrock':
         case 'paperpaper':
         case 'scissorsscissors':
-          setResult('Draw! Play again')
+          setResult('Draw! Throw again')
           break
       }
     }
@@ -44,10 +44,10 @@ const RPS = () => {
   return (
     <div className='container'>
         <div className='row'>
-          <div className='col-9 mx-auto my-5'>
+          <div className='col-5 mx-auto my-5'>
             <h1 className='my-3'>Rock Paper Scissors</h1>
-            <h3>You throw: {userChoice}</h3>
-            <h3 className='my-4'>Computer throws: {computerChoice}</h3>
+            <h3>You threw: {userChoice}</h3>
+            <h3 className='my-4'>Computer threw: {computerChoice}</h3>
             {choices.map((choice, index) => 
               <button className='mx-3' key={index} onClick={() => handleClick(choice)}>{choice}</button>
             )}
