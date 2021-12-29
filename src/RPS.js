@@ -4,7 +4,7 @@ import './index.css';
 const RPS = () => {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
-  const [result, setResult] = useState('Who shall win?');
+  const [result, setResult] = useState(null);
 
   const choices = ['rock', 'paper', 'scissors'];
 
@@ -36,6 +36,8 @@ const RPS = () => {
         case 'scissorsscissors':
           setResult('Draw! Throw again')
           break
+          default:
+             setResult('Who shall win!');
     }
   }, [computerChoice, userChoice]); 
 
