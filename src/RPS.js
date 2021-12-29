@@ -1,4 +1,4 @@
-import { useDebugValue, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './index.css';
 
 const RPS = () => {
@@ -20,7 +20,6 @@ const RPS = () => {
   }
 
   useEffect(() => {
-    {
       switch  (userChoice + computerChoice) {
         case 'scissorspaper':
         case 'rockscissors':
@@ -37,7 +36,6 @@ const RPS = () => {
         case 'scissorsscissors':
           setResult('Draw! Throw again')
           break
-      }
     }
   }, [computerChoice, userChoice]); 
 
